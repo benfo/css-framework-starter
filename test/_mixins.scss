@@ -1,0 +1,16 @@
+@use '../node_modules/sass-true' as *;
+@use "../src/mixins" as *;
+
+@include describe("apply-font-size [mixin]") {
+  @include it("should include font size") {
+    @include assert {
+      @include output {
+        @include apply-font-size(2rem);
+      }
+
+      @include expect {
+        font-size: 2rem;
+      }
+    }
+  }
+}
