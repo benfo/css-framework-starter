@@ -16,7 +16,7 @@ function clean() {
 
 function build() {
   return src("src/**/*.scss")
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
     .pipe(dest("dist"));
 }
 
@@ -25,7 +25,7 @@ function serve() {
     server: "./site",
   });
 
-  watch("sass/**/*.scss", devBuild);
+  watch("src/**/*.scss", devBuild);
   watch("site/*.html").on("change", browserSync.reload);
 }
 

@@ -1,0 +1,15 @@
+
+.alert {
+  padding: 0.5em;
+  display: block;
+  margin-bottom: 1em;
+
+  @each $name, $color in $theme-colors {
+    &-#{$name} {
+      background-color: $color;
+      color: $white;
+      border: 1px darken($color, 20%) solid;
+      border-radius: 0.25rem;
+    }
+  }
+}
